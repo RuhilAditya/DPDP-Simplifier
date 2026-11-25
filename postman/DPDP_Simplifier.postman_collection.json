@@ -1,0 +1,129 @@
+{
+  "info": {
+    "name": "DPDP Act Simplifier",
+    "description": "CSL374 Project 11. Requests and tests for the FastAPI microservice. Set baseUrl (default http://localhost:8000). Import into Postman, or run headless: npx newman run postman/DPDP_Simplifier.postman_collection.json",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{"key": "baseUrl", "value": "http://localhost:8000"}],
+  "item": [
+    {
+      "name": "Health",
+      "request": {"method": "GET", "url": "{{baseUrl}}/health"},
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "const b = pm.response.json();",
+        "pm.test('status ok', () => pm.expect(b.status).to.eql('ok'));",
+        "pm.test('phi3:mini available in Ollama', () => pm.expect(b.ollama.model_available).to.be.true);",
+        "pm.test('index loaded', () => pm.expect(b.chunks).to.be.above(100));"
+      ]}}]
+    },
+    {
+      "name": "Sections (table of contents)",
+      "request": {"method": "GET", "url": "{{baseUrl}}/sections"},
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "const b = pm.response.json();",
+        "pm.test('44 sections + Schedule', () => pm.expect(b.length).to.eql(45));",
+        "pm.test('Section 8 title', () => pm.expect(b[7].title).to.include('General obligations'));"
+      ]}}]
+    },
+    {
+      "name": "Ask - consent withdrawal (in scope)",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"question\": \"Can I withdraw my consent at any time?\"\n}"}
+      },
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "const b = pm.response.json();",
+        "pm.test('not a fallback', () => pm.expect(b.fallback).to.be.false);",
+        "pm.test('cites Section 6(4)', () => pm.expect(b.sections).to.include('Section 6(4)'));",
+        "pm.test('verbatim clause returned', () => pm.expect(b.original_clause).to.include('withdraw her consent at any time'));",
+        "pm.test('has plain-language rewrite', () => pm.expect(b.plain_language.length).to.be.above(10));",
+        "pm.test('has disclaimer', () => pm.expect(b.disclaimer).to.include('not legal advice'));"
+      ]}}]
+    },
+    {
+      "name": "Ask - who is a child (in scope)",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"question\": \"Who counts as a child under this law?\"\n}"}
+      },
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "const b = pm.response.json();",
+        "pm.test('cites Section 2(f)', () => pm.expect(b.sections).to.include('Section 2(f)'));",
+        "pm.test('mentions eighteen', () => pm.expect((b.answer + b.plain_language).toLowerCase()).to.match(/eighteen|18/));"
+      ]}}]
+    },
+    {
+      "name": "Ask - maximum penalty (in scope)",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"question\": \"What is the maximum penalty for a Data Fiduciary that fails to prevent a data breach?\"\n}"}
+      },
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "const b = pm.response.json();",
+        "pm.test('cites Schedule item 1', () => pm.expect(b.sections).to.include('Schedule, item 1'));",
+        "pm.test('250 crore', () => pm.expect((b.answer + b.plain_language).toLowerCase()).to.match(/two hundred and fifty crore|250 crore/));"
+      ]}}]
+    },
+    {
+      "name": "Ask - IT Act penalty (out of scope -> fallback)",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"question\": \"What is the penalty under the IT Act for hacking?\"\n}"}
+      },
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "const b = pm.response.json();",
+        "pm.test('graceful fallback', () => pm.expect(b.fallback).to.be.true);",
+        "pm.test('says not covered', () => pm.expect(b.answer).to.include(\"don't have information\"));",
+        "pm.test('no citations invented', () => pm.expect(b.sections).to.have.length(0));"
+      ]}}]
+    },
+    {
+      "name": "Ask - validation error (too short)",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"question\": \"a\"\n}"}
+      },
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": [
+        "pm.test('422 Unprocessable', () => pm.response.to.have.status(422));"
+      ]}}]
+    },
+    {
+      "name": "Simplify - Section 8(6)",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/simplify",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"section\": \"8(6)\"\n}"}
+      },
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "const b = pm.response.json();",
+        "pm.test('resolved citation', () => pm.expect(b.section).to.eql('Section 8(6)'));",
+        "pm.test('verbatim clause', () => pm.expect(b.original_clause).to.include('In the event of a personal data breach'));",
+        "pm.test('rewrite present', () => pm.expect(b.plain_language.length).to.be.above(20));"
+      ]}}]
+    },
+    {
+      "name": "Simplify - unknown section (404)",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/simplify",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"section\": \"99\"\n}"}
+      },
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": [
+        "pm.test('404 Not Found', () => pm.response.to.have.status(404));",
+        "pm.test('helpful message', () => pm.expect(pm.response.json().detail).to.include('sections 1-44'));"
+      ]}}]
+    }
+  ]
+}

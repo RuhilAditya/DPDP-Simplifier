@@ -1,0 +1,822 @@
+{
+  "summary": {
+    "run_at": "2026-11-22T20:38:05",
+    "model": "phi3:mini",
+    "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "top_k": 6,
+    "sim_threshold": 0.25,
+    "temperature": 0.1,
+    "retrieval_hit": "9/10",
+    "citation_hit": "8/10",
+    "auto_pass": "7/10",
+    "correct_in_scope": "6/10",
+    "fallback_correct": "3/3",
+    "manual_review_done": true,
+    "mean_latency_s": 4.3,
+    "replayed_from": "results_run1.json"
+  },
+  "rows": [
+    {
+      "id": "T1",
+      "type": "in-scope",
+      "question": "Who counts as a child under this law?",
+      "expected": "Section 2(f)",
+      "cited": "Section 2(f)",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "facts": "1/1",
+      "fallback": false,
+      "latency_s": 15.66,
+      "auto_pass": true,
+      "meaning_preserved": true,
+      "correct": true,
+      "notes": "Matches 2(f): not completed eighteen years."
+    },
+    {
+      "id": "T2",
+      "type": "in-scope",
+      "question": "What does an organisation have to do if it suffers a personal data breach?",
+      "expected": "Section 8(6)",
+      "cited": "Section 8(6)",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "facts": "2/2",
+      "fallback": false,
+      "latency_s": 4.14,
+      "auto_pass": true,
+      "meaning_preserved": false,
+      "correct": false,
+      "notes": "Rewrite adds 'promptly'; 8(6) sets no timing, only 'form and manner as may be prescribed'."
+    },
+    {
+      "id": "T3",
+      "type": "in-scope",
+      "question": "Can I take back my consent later, and how easy does that have to be?",
+      "expected": "Section 6(4)",
+      "cited": "Section 6(4)",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "facts": "2/2",
+      "fallback": false,
+      "latency_s": 3.62,
+      "auto_pass": true,
+      "meaning_preserved": true,
+      "correct": true,
+      "notes": "Any time; ease comparable to giving consent."
+    },
+    {
+      "id": "T4",
+      "type": "in-scope",
+      "question": "What is the maximum fine for not taking reasonable security safeguards to prevent a data breach?",
+      "expected": "Schedule, item 1",
+      "cited": "Schedule, item 1",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "facts": "1/1",
+      "fallback": false,
+      "latency_s": 4.31,
+      "auto_pass": true,
+      "meaning_preserved": true,
+      "correct": true,
+      "notes": "Up to Rs 250 crore, Schedule item 1."
+    },
+    {
+      "id": "T5",
+      "type": "in-scope",
+      "question": "What information must be given in the notice before my consent is asked for?",
+      "expected": "Section 5(1)",
+      "cited": "Section 6(10)",
+      "retrieval_hit": true,
+      "citation_hit": false,
+      "facts": "3/3",
+      "fallback": false,
+      "latency_s": 5.48,
+      "auto_pass": false,
+      "meaning_preserved": true,
+      "correct": false,
+      "notes": "Content matches 5(1) but attributed to 6(10) (citation error)."
+    },
+    {
+      "id": "T6",
+      "type": "in-scope",
+      "question": "Is targeted advertising aimed at children allowed?",
+      "expected": "Section 9(3)",
+      "cited": "Section 9(3)",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "facts": "2/2",
+      "fallback": false,
+      "latency_s": 3.15,
+      "auto_pass": true,
+      "meaning_preserved": true,
+      "correct": true,
+      "notes": "9(3) prohibition kept."
+    },
+    {
+      "id": "T7",
+      "type": "in-scope",
+      "question": "How quickly must a company reply to my grievance?",
+      "expected": "Section 13(2)",
+      "cited": "Section 13(2)",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "facts": "1/1",
+      "fallback": false,
+      "latency_s": 4.08,
+      "auto_pass": true,
+      "meaning_preserved": true,
+      "correct": true,
+      "notes": "Period to be prescribed by rules."
+    },
+    {
+      "id": "T8",
+      "type": "in-scope",
+      "question": "What duties do I have as a Data Principal?",
+      "expected": "Section 15",
+      "cited": "Section 15, Section 13(1)",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "facts": "0/2",
+      "fallback": false,
+      "latency_s": 4.21,
+      "auto_pass": false,
+      "meaning_preserved": false,
+      "correct": false,
+      "notes": "Lists grievance redressal (a right, s.13) as a duty; omits impersonation and false-grievance duties."
+    },
+    {
+      "id": "T9",
+      "type": "in-scope",
+      "question": "Can my personal data be sent to other countries?",
+      "expected": "Section 16(1) / Section 16(2)",
+      "cited": "-",
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "facts": "0/2",
+      "fallback": true,
+      "latency_s": 3.98,
+      "auto_pass": false,
+      "meaning_preserved": false,
+      "correct": false,
+      "notes": "Retrieval missed s.16; model fell back."
+    },
+    {
+      "id": "T10",
+      "type": "in-scope",
+      "question": "How long do I have to appeal against an order of the Data Protection Board, and to whom?",
+      "expected": "Section 29(1) / Section 29(2)",
+      "cited": "Section 29(6), Section 29(2)",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "facts": "2/2",
+      "fallback": false,
+      "latency_s": 4.08,
+      "auto_pass": true,
+      "meaning_preserved": true,
+      "correct": true,
+      "notes": "60 days, Appellate Tribunal (29(2)); extra cite 29(6)."
+    },
+    {
+      "id": "O1",
+      "type": "out-of-scope",
+      "question": "What is the penalty under the IT Act for hacking into a computer?",
+      "expected": "fallback",
+      "cited": "-",
+      "retrieval_hit": "",
+      "citation_hit": "",
+      "facts": "",
+      "fallback": true,
+      "latency_s": 2.73,
+      "auto_pass": true,
+      "meaning_preserved": "",
+      "correct": true,
+      "notes": "model reported the retrieved clauses do not answer the question"
+    },
+    {
+      "id": "O2",
+      "type": "out-of-scope",
+      "question": "What is the GST rate on restaurant food?",
+      "expected": "fallback",
+      "cited": "-",
+      "retrieval_hit": "",
+      "citation_hit": "",
+      "facts": "",
+      "fallback": true,
+      "latency_s": 0.02,
+      "auto_pass": true,
+      "meaning_preserved": "",
+      "correct": true,
+      "notes": "best retrieval score 0.20 < threshold 0.25"
+    },
+    {
+      "id": "O3",
+      "type": "out-of-scope",
+      "question": "How do I file my income tax return online?",
+      "expected": "fallback",
+      "cited": "-",
+      "retrieval_hit": "",
+      "citation_hit": "",
+      "facts": "",
+      "fallback": true,
+      "latency_s": 0.02,
+      "auto_pass": true,
+      "meaning_preserved": "",
+      "correct": true,
+      "notes": "best retrieval score 0.23 < threshold 0.25"
+    }
+  ],
+  "raw": [
+    {
+      "id": "T1",
+      "question": "Who counts as a child under this law?",
+      "answer": "A child is defined as an individual who has not completed the age of eighteen years.",
+      "plain_language": "Under this law, a child is anyone under eighteen years old.",
+      "original_clause": "[Section 2(f)] (f) \"child\" means an individual who has not completed the age of eighteen\nyears;",
+      "sections": [
+        "Section 2(f)"
+      ],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": false,
+      "fallback_reason": null,
+      "retrieved": [
+        {
+          "citation": "Section 2(f)",
+          "title": "Definitions",
+          "score": 0.461
+        },
+        {
+          "citation": "Section 9(1)",
+          "title": "Processing of personal data of children",
+          "score": 0.405
+        },
+        {
+          "citation": "Section 40(2)(j)",
+          "title": "Power to make rules",
+          "score": 0.403
+        },
+        {
+          "citation": "Section 9(4)",
+          "title": "Processing of personal data of children",
+          "score": 0.395
+        },
+        {
+          "citation": "Section 38(1)",
+          "title": "Consistency with other laws",
+          "score": 0.344
+        },
+        {
+          "citation": "Section 2(j)",
+          "title": "Definitions",
+          "score": 0.31
+        }
+      ],
+      "latency_s": 15.66
+    },
+    {
+      "id": "T2",
+      "question": "What does an organisation have to do if it suffers a personal data breach?",
+      "answer": "An organisation must give the Board and each affected Data Principal intimation of the breach in the prescribed form and manner.",
+      "plain_language": "If your organization experiences a personal data breach, you must inform the Board and the affected individuals promptly, following the specific guidelines set by the government.",
+      "original_clause": "[Section 8(6)] (6) In the event of a personal data breach, the Data Fiduciary shall give the Board and\neach affected Data Principal, intimation of such breach in such form and manner as may be\nprescribed.",
+      "sections": [
+        "Section 8(6)"
+      ],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": false,
+      "fallback_reason": null,
+      "retrieved": [
+        {
+          "citation": "Section 27(1)",
+          "title": "Powers and functions of Board",
+          "score": 0.532
+        },
+        {
+          "citation": "Section 8(6)",
+          "title": "General obligations of Data Fiduciary",
+          "score": 0.533
+        },
+        {
+          "citation": "Section 2(u)",
+          "title": "Definitions",
+          "score": 0.646
+        },
+        {
+          "citation": "Section 40(2)(f)",
+          "title": "Power to make rules",
+          "score": 0.474
+        },
+        {
+          "citation": "Section 8(5)",
+          "title": "General obligations of Data Fiduciary",
+          "score": 0.441
+        },
+        {
+          "citation": "Schedule, item 2",
+          "title": "Penalties (Schedule, see section 33(1))",
+          "score": 0.43
+        }
+      ],
+      "latency_s": 4.14
+    },
+    {
+      "id": "T3",
+      "question": "Can I take back my consent later, and how easy does that have to be?",
+      "answer": "Yes, you can withdraw your consent at any time, and it should be as easy as giving it.",
+      "plain_language": "You can revoke your consent whenever you want, and it should be just as easy as when you first gave it.",
+      "original_clause": "[Section 6(4)] (4) Where consent given by the Data Principal is the basis of processing of personal\ndata, such Data Principal shall have the right to withdraw her consent at any time, with the\nease of doing so being comparable to the ease with which such consent was given.",
+      "sections": [
+        "Section 6(4)"
+      ],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": false,
+      "fallback_reason": null,
+      "retrieved": [
+        {
+          "citation": "Section 6(4)",
+          "title": "Consent",
+          "score": 0.478
+        },
+        {
+          "citation": "Section 6(7)",
+          "title": "Consent",
+          "score": 0.43
+        },
+        {
+          "citation": "Section 6(8)",
+          "title": "Consent",
+          "score": 0.385
+        },
+        {
+          "citation": "Section 9(1)",
+          "title": "Processing of personal data of children",
+          "score": 0.382
+        },
+        {
+          "citation": "Section 6(1)",
+          "title": "Consent",
+          "score": 0.368
+        },
+        {
+          "citation": "Section 6(9)",
+          "title": "Consent",
+          "score": 0.358
+        }
+      ],
+      "latency_s": 3.62
+    },
+    {
+      "id": "T4",
+      "question": "What is the maximum fine for not taking reasonable security safeguards to prevent a data breach?",
+      "answer": "The maximum fine for not taking reasonable security safeguards to prevent a data breach is two hundred and fifty crore rupees.",
+      "plain_language": "If a Data Fiduciary does not take reasonable security measures to protect personal data, they could be fined up to two hundred and fifty crore rupees.",
+      "original_clause": "[Schedule, item 1] 1. Breach: Breach in observing the obligation of Data Fiduciary to take reasonable security safeguards to prevent personal data breach under sub-section (5) of section 8.\nPenalty: May extend to two hundred and fifty crore rupees.",
+      "sections": [
+        "Schedule, item 1"
+      ],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": false,
+      "fallback_reason": null,
+      "retrieved": [
+        {
+          "citation": "Schedule, item 1",
+          "title": "Penalties (Schedule, see section 33(1))",
+          "score": 0.479
+        },
+        {
+          "citation": "Section 27(1)",
+          "title": "Powers and functions of Board",
+          "score": 0.468
+        },
+        {
+          "citation": "Section 8(5)",
+          "title": "General obligations of Data Fiduciary",
+          "score": 0.4
+        },
+        {
+          "citation": "Schedule, item 2",
+          "title": "Penalties (Schedule, see section 33(1))",
+          "score": 0.463
+        },
+        {
+          "citation": "Section 33(2)",
+          "title": "Penalties",
+          "score": 0.528
+        },
+        {
+          "citation": "Section 8(6)",
+          "title": "General obligations of Data Fiduciary",
+          "score": 0.428
+        }
+      ],
+      "latency_s": 4.31
+    },
+    {
+      "id": "T5",
+      "question": "What information must be given in the notice before my consent is asked for?",
+      "answer": "The notice must inform the Data Principal about the personal data to be processed, the purpose of processing, and how to exercise rights and make complaints.",
+      "plain_language": "The Data Fidu002cciary must give a notice to the Data Principal that tells them what personal information will be used, why it's being used, and how they can exercise their rights and complain if needed.",
+      "original_clause": "[Section 6(10)] (10) Where a consent given by the Data Principal is the basis of processing of\npersonal data and a question arises in this regard in a proceeding, the Data Fiduciary shall\nbe obliged to prove that a notice was given by her to the Data Principal and consent was\ngiven by such Data Principal to the Data Fiduciary in accordance with the provisions of this\nAct and the rules made thereunder.",
+      "sections": [
+        "Section 6(10)"
+      ],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": false,
+      "fallback_reason": null,
+      "retrieved": [
+        {
+          "citation": "Section 6(10)",
+          "title": "Consent",
+          "score": 0.597
+        },
+        {
+          "citation": "Section 5(1)",
+          "title": "Notice",
+          "score": 0.559
+        },
+        {
+          "citation": "Section 5(2)",
+          "title": "Notice",
+          "score": 0.519
+        },
+        {
+          "citation": "Section 6(4)",
+          "title": "Consent",
+          "score": 0.49
+        },
+        {
+          "citation": "Section 11(1)",
+          "title": "Right to access information about personal data",
+          "score": 0.506
+        },
+        {
+          "citation": "Section 6(1)",
+          "title": "Consent",
+          "score": 0.54
+        }
+      ],
+      "latency_s": 5.48
+    },
+    {
+      "id": "T6",
+      "question": "Is targeted advertising aimed at children allowed?",
+      "answer": "No, targeted advertising aimed at children is not allowed.",
+      "plain_language": "A Data Fiduciary cannot track children or show them targeted ads.",
+      "original_clause": "[Section 9(3)] (3) A Data Fiduciary shall not undertake tracking or behavioural monitoring of children\nor targeted advertising directed at children.",
+      "sections": [
+        "Section 9(3)"
+      ],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": false,
+      "fallback_reason": null,
+      "retrieved": [
+        {
+          "citation": "Section 9(3)",
+          "title": "Processing of personal data of children",
+          "score": 0.393
+        },
+        {
+          "citation": "Section 9(5)",
+          "title": "Processing of personal data of children",
+          "score": 0.253
+        },
+        {
+          "citation": "Section 9(4)",
+          "title": "Processing of personal data of children",
+          "score": 0.258
+        },
+        {
+          "citation": "Section 9(2)",
+          "title": "Processing of personal data of children",
+          "score": 0.245
+        },
+        {
+          "citation": "Section 9(1)",
+          "title": "Processing of personal data of children",
+          "score": 0.238
+        },
+        {
+          "citation": "Section 2(d)",
+          "title": "Definitions",
+          "score": 0.199
+        }
+      ],
+      "latency_s": 3.15
+    },
+    {
+      "id": "T7",
+      "question": "How quickly must a company reply to my grievance?",
+      "answer": "The Data Fiduciary or Consent Manager must respond to grievances within a prescribed period.",
+      "plain_language": "The company has to reply to your grievance within a time frame set by the government rules.",
+      "original_clause": "[Section 13(2)] (2) The Data Fiduciary or Consent Manager shall respond to any grievances referred\nto in sub-section (1) within such period as may be prescribed from the date of its receipt for\nall or any class of Data Fiduciaries.",
+      "sections": [
+        "Section 13(2)"
+      ],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": false,
+      "fallback_reason": null,
+      "retrieved": [
+        {
+          "citation": "Section 13(3)",
+          "title": "Right of grievance redressal",
+          "score": 0.384
+        },
+        {
+          "citation": "Section 13(2)",
+          "title": "Right of grievance redressal",
+          "score": 0.386
+        },
+        {
+          "citation": "Section 13(1)",
+          "title": "Right of grievance redressal",
+          "score": 0.322
+        },
+        {
+          "citation": "Section 17(1)(e)",
+          "title": "Exemptions",
+          "score": 0.169
+        },
+        {
+          "citation": "Section 29(2)",
+          "title": "Appeal to Appellate Tribunal",
+          "score": 0.354
+        },
+        {
+          "citation": "Section 31",
+          "title": "Alternate dispute resolution",
+          "score": 0.352
+        }
+      ],
+      "latency_s": 4.08
+    },
+    {
+      "id": "T8",
+      "question": "What duties do I have as a Data Principal?",
+      "answer": "As a Data Principal, you must comply with all applicable laws, ensure authenticity of information, and have means for grievance redressal.",
+      "plain_language": "You must follow all laws, make sure your personal data is real, and have a way to complain if something goes wrong.",
+      "original_clause": "[Section 15] A Data Principal shall perform the following duties, namely:—\n(a) comply with the provisions of all applicable laws for the time being in force\nwhile exercising rights under the provisions of this Act;\n(b) to ensure not to impersonate another person while providing her personal\ndata for a specified purpose;\n(c) to ensure not to suppress any material information while providing her\npersonal data for any document, unique identifier, proof of identity or proof of address\nissued by the State or any of its instrumentalities;\n(d) to ensure not to register a false or frivolous grievance or complaint with a\nData Fiduciary or the Board; and\n(e) to furnish only such information as is verifiably authentic, while exercising\nthe right to correction or erasure under the provisions of this Act or the rules made\nthereunder.\n\n[Section 13(1)] (1)A Data Principal shall have the right to have readily available means of grievance\nredressal provided by a Data Fiduciary or Consent Manager in respect of any act or omission\nof such Data Fiduciary or Consent Manager regarding the performance of its obligations in\nrelation to the personal data of such Data Principal or the exercise of her rights under the\nprovisions of this Act and the rules made thereunder.",
+      "sections": [
+        "Section 15",
+        "Section 13(1)"
+      ],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": false,
+      "fallback_reason": null,
+      "retrieved": [
+        {
+          "citation": "Section 15",
+          "title": "Duties of Data Principal",
+          "score": 0.723
+        },
+        {
+          "citation": "Section 14(1)",
+          "title": "Right to nominate",
+          "score": 0.607
+        },
+        {
+          "citation": "Section 13(1)",
+          "title": "Right of grievance redressal",
+          "score": 0.568
+        },
+        {
+          "citation": "Section 12(3)",
+          "title": "Right to correction and erasure of personal data",
+          "score": 0.547
+        },
+        {
+          "citation": "Section 13(3)",
+          "title": "Right of grievance redressal",
+          "score": 0.525
+        },
+        {
+          "citation": "Section 8(1)",
+          "title": "General obligations of Data Fiduciary",
+          "score": 0.553
+        }
+      ],
+      "latency_s": 4.21
+    },
+    {
+      "id": "T9",
+      "question": "Can my personal data be sent to other countries?",
+      "answer": "I don't have information on that. It is not covered in the Digital Personal Data Protection Act, 2023.",
+      "plain_language": "",
+      "original_clause": "",
+      "sections": [],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": true,
+      "fallback_reason": "model reported the retrieved clauses do not answer the question",
+      "retrieved": [
+        {
+          "citation": "Section 11(2)",
+          "title": "Right to access information about personal data",
+          "score": 0.438
+        },
+        {
+          "citation": "Section 3",
+          "title": "Application of Act",
+          "score": 0.465
+        },
+        {
+          "citation": "Section 7(b)",
+          "title": "Certain legitimate uses",
+          "score": 0.442
+        },
+        {
+          "citation": "Section 11(1)",
+          "title": "Right to access information about personal data",
+          "score": 0.381
+        },
+        {
+          "citation": "Section 6(6)",
+          "title": "Consent",
+          "score": 0.424
+        },
+        {
+          "citation": "Section 5(2)",
+          "title": "Notice",
+          "score": 0.397
+        }
+      ],
+      "latency_s": 3.98
+    },
+    {
+      "id": "T10",
+      "question": "How long do I have to appeal against an order of the Data Protection Board, and to whom?",
+      "answer": "You have sixty days to appeal against an order of the Data Protection Board, and the appeal must be filed before the Appellate Tribunal.",
+      "plain_language": "You must appeal within 60 days, and the appeal goes to the Appellate Tribunal.",
+      "original_clause": "[Section 29(6)] (6) The appeal filed before the Appellate Tribunal under sub-section (1) shall be dealt\nwith by it as expeditiously as possible and endeavour shall be made by it to dispose of the\nappeal finally within six months from the date on which the appeal is presented to it.\n\n[Section 29(2)] (2) Every appeal under sub-section (1) shall be filed within a period of sixty days from\nthe date of receipt of the order or direction appealed against and it shall be in such form and\nmanner and shall be accompanied by such fee as may be prescribed.",
+      "sections": [
+        "Section 29(6)",
+        "Section 29(2)"
+      ],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": false,
+      "fallback_reason": null,
+      "retrieved": [
+        {
+          "citation": "Section 29(2)",
+          "title": "Appeal to Appellate Tribunal",
+          "score": 0.526
+        },
+        {
+          "citation": "Section 29(5)",
+          "title": "Appeal to Appellate Tribunal",
+          "score": 0.473
+        },
+        {
+          "citation": "Section 18(1)",
+          "title": "Establishment of Board",
+          "score": 0.501
+        },
+        {
+          "citation": "Section 29(9)",
+          "title": "Appeal to Appellate Tribunal",
+          "score": 0.466
+        },
+        {
+          "citation": "Section 29(6)",
+          "title": "Appeal to Appellate Tribunal",
+          "score": 0.486
+        },
+        {
+          "citation": "Section 29(1)",
+          "title": "Appeal to Appellate Tribunal",
+          "score": 0.441
+        }
+      ],
+      "latency_s": 4.08
+    },
+    {
+      "id": "O1",
+      "question": "What is the penalty under the IT Act for hacking into a computer?",
+      "answer": "I don't have information on that. It is not covered in the Digital Personal Data Protection Act, 2023.",
+      "plain_language": "",
+      "original_clause": "",
+      "sections": [],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": true,
+      "fallback_reason": "model reported the retrieved clauses do not answer the question",
+      "retrieved": [
+        {
+          "citation": "Section 27(1)",
+          "title": "Powers and functions of Board",
+          "score": 0.425
+        },
+        {
+          "citation": "Section 33(2)",
+          "title": "Penalties",
+          "score": 0.438
+        },
+        {
+          "citation": "Schedule, item 7",
+          "title": "Penalties (Schedule, see section 33(1))",
+          "score": 0.399
+        },
+        {
+          "citation": "Schedule, item 1",
+          "title": "Penalties (Schedule, see section 33(1))",
+          "score": 0.453
+        },
+        {
+          "citation": "Schedule, item 4",
+          "title": "Penalties (Schedule, see section 33(1))",
+          "score": 0.413
+        },
+        {
+          "citation": "Schedule, item 2",
+          "title": "Penalties (Schedule, see section 33(1))",
+          "score": 0.429
+        }
+      ],
+      "latency_s": 2.73
+    },
+    {
+      "id": "O2",
+      "question": "What is the GST rate on restaurant food?",
+      "answer": "I don't have information on that. It is not covered in the Digital Personal Data Protection Act, 2023.",
+      "plain_language": "",
+      "original_clause": "",
+      "sections": [],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": true,
+      "fallback_reason": "best retrieval score 0.20 < threshold 0.25",
+      "retrieved": [
+        {
+          "citation": "Schedule, item 5",
+          "title": "Penalties (Schedule, see section 33(1))",
+          "score": 0.203
+        },
+        {
+          "citation": "Section 1(1)",
+          "title": "Short title and commencement",
+          "score": 0.02
+        },
+        {
+          "citation": "Schedule, item 3",
+          "title": "Penalties (Schedule, see section 33(1))",
+          "score": 0.155
+        },
+        {
+          "citation": "Section 1(2)",
+          "title": "Short title and commencement",
+          "score": 0.009
+        },
+        {
+          "citation": "Section 7(g)",
+          "title": "Certain legitimate uses",
+          "score": 0.145
+        },
+        {
+          "citation": "Section 2(a)",
+          "title": "Definitions",
+          "score": 0.063
+        }
+      ],
+      "latency_s": 0.02
+    },
+    {
+      "id": "O3",
+      "question": "How do I file my income tax return online?",
+      "answer": "I don't have information on that. It is not covered in the Digital Personal Data Protection Act, 2023.",
+      "plain_language": "",
+      "original_clause": "",
+      "sections": [],
+      "disclaimer": "This is general information about the Digital Personal Data Protection Act, 2023, not legal advice. Check the original text or consult a qualified lawyer before acting on it.",
+      "fallback": true,
+      "fallback_reason": "best retrieval score 0.23 < threshold 0.25",
+      "retrieved": [
+        {
+          "citation": "Section 2(m)",
+          "title": "Definitions",
+          "score": 0.204
+        },
+        {
+          "citation": "Section 1(1)",
+          "title": "Short title and commencement",
+          "score": 0.206
+        },
+        {
+          "citation": "Section 5(2)",
+          "title": "Notice",
+          "score": 0.155
+        },
+        {
+          "citation": "Section 2(n)",
+          "title": "Definitions",
+          "score": 0.165
+        },
+        {
+          "citation": "Section 2(i)",
+          "title": "Definitions",
+          "score": 0.148
+        },
+        {
+          "citation": "Section 7(b)",
+          "title": "Certain legitimate uses",
+          "score": 0.231
+        }
+      ],
+      "latency_s": 0.02
+    }
+  ]
+}

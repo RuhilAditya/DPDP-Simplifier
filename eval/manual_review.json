@@ -1,0 +1,68 @@
+{
+  "_note": "Manual spot-check, each answer read against the Act text. A verdict only applies while the pipeline output is exactly the reviewed text (reviewed_answer + reviewed_plain_language); any change in output shows as 'unreviewed'.",
+  "summary": {
+    "auto_pass": "7/10",
+    "strict_correct_after_manual_review": "6/10",
+    "fallback_correct": "3/3"
+  },
+  "T1": {
+    "meaning_preserved": true,
+    "notes": "Matches 2(f): not completed eighteen years.",
+    "reviewed_answer": "A child is defined as an individual who has not completed the age of eighteen years.",
+    "reviewed_plain_language": "Under this law, a child is anyone under eighteen years old."
+  },
+  "T2": {
+    "meaning_preserved": false,
+    "notes": "Rewrite adds 'promptly'; 8(6) sets no timing, only 'form and manner as may be prescribed'.",
+    "reviewed_answer": "An organisation must give the Board and each affected Data Principal intimation of the breach in the prescribed form and manner.",
+    "reviewed_plain_language": "If your organization experiences a personal data breach, you must inform the Board and the affected individuals promptly, following the specific guidelines set by the government."
+  },
+  "T3": {
+    "meaning_preserved": true,
+    "notes": "Any time; ease comparable to giving consent.",
+    "reviewed_answer": "Yes, you can withdraw your consent at any time, and it should be as easy as giving it.",
+    "reviewed_plain_language": "You can revoke your consent whenever you want, and it should be just as easy as when you first gave it."
+  },
+  "T4": {
+    "meaning_preserved": true,
+    "notes": "Up to Rs 250 crore, Schedule item 1.",
+    "reviewed_answer": "The maximum fine for not taking reasonable security safeguards to prevent a data breach is two hundred and fifty crore rupees.",
+    "reviewed_plain_language": "If a Data Fiduciary does not take reasonable security measures to protect personal data, they could be fined up to two hundred and fifty crore rupees."
+  },
+  "T5": {
+    "meaning_preserved": true,
+    "notes": "Content matches 5(1) but attributed to 6(10) (citation error).",
+    "reviewed_answer": "The notice must inform the Data Principal about the personal data to be processed, the purpose of processing, and how to exercise rights and make complaints.",
+    "reviewed_plain_language": "The Data Fidu002cciary must give a notice to the Data Principal that tells them what personal information will be used, why it's being used, and how they can exercise their rights and complain if needed."
+  },
+  "T6": {
+    "meaning_preserved": true,
+    "notes": "9(3) prohibition kept.",
+    "reviewed_answer": "No, targeted advertising aimed at children is not allowed.",
+    "reviewed_plain_language": "A Data Fiduciary cannot track children or show them targeted ads."
+  },
+  "T7": {
+    "meaning_preserved": true,
+    "notes": "Period to be prescribed by rules.",
+    "reviewed_answer": "The Data Fiduciary or Consent Manager must respond to grievances within a prescribed period.",
+    "reviewed_plain_language": "The company has to reply to your grievance within a time frame set by the government rules."
+  },
+  "T8": {
+    "meaning_preserved": false,
+    "notes": "Lists grievance redressal (a right, s.13) as a duty; omits impersonation and false-grievance duties.",
+    "reviewed_answer": "As a Data Principal, you must comply with all applicable laws, ensure authenticity of information, and have means for grievance redressal.",
+    "reviewed_plain_language": "You must follow all laws, make sure your personal data is real, and have a way to complain if something goes wrong."
+  },
+  "T9": {
+    "meaning_preserved": false,
+    "notes": "Retrieval missed s.16; model fell back.",
+    "reviewed_answer": "I don't have information on that. It is not covered in the Digital Personal Data Protection Act, 2023.",
+    "reviewed_plain_language": ""
+  },
+  "T10": {
+    "meaning_preserved": true,
+    "notes": "60 days, Appellate Tribunal (29(2)); extra cite 29(6).",
+    "reviewed_answer": "You have sixty days to appeal against an order of the Data Protection Board, and the appeal must be filed before the Appellate Tribunal.",
+    "reviewed_plain_language": "You must appeal within 60 days, and the appeal goes to the Appellate Tribunal."
+  }
+}

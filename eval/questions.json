@@ -1,0 +1,40 @@
+{
+  "_note": "Held-out TEST set. Written from the Act before any tuning; never used to choose prompts, k or the threshold. expected_sections: any of these counts as the correct clause. key_facts: each inner list is one fact, satisfied if ANY of its phrasings appears in answer + plain_language (case-insensitive).",
+  "in_scope": [
+    {"id": "T1", "question": "Who counts as a child under this law?",
+     "expected_sections": ["Section 2(f)"],
+     "key_facts": [["eighteen", "18"]]},
+    {"id": "T2", "question": "What does an organisation have to do if it suffers a personal data breach?",
+     "expected_sections": ["Section 8(6)"],
+     "key_facts": [["board"], ["each affected", "affected data principal", "affected individuals", "affected people", "people affected", "affected person", "individuals affected", "persons affected"]]},
+    {"id": "T3", "question": "Can I take back my consent later, and how easy does that have to be?",
+     "expected_sections": ["Section 6(4)"],
+     "key_facts": [["any time", "anytime"], ["as easy", "ease", "easily", "comparable", "same way", "just as"]]},
+    {"id": "T4", "question": "What is the maximum fine for not taking reasonable security safeguards to prevent a data breach?",
+     "expected_sections": ["Schedule, item 1"],
+     "key_facts": [["two hundred and fifty crore", "250 crore", "₹250 crore", "rs 250 crore", "250crore"]]},
+    {"id": "T5", "question": "What information must be given in the notice before my consent is asked for?",
+     "expected_sections": ["Section 5(1)"],
+     "key_facts": [["purpose"], ["complaint", "complain"], ["right", "withdraw", "grievance"]]},
+    {"id": "T6", "question": "Is targeted advertising aimed at children allowed?",
+     "expected_sections": ["Section 9(3)"],
+     "key_facts": [["not", "prohibit", "banned", "cannot", "must not"], ["advertis"]]},
+    {"id": "T7", "question": "How quickly must a company reply to my grievance?",
+     "expected_sections": ["Section 13(2)"],
+     "key_facts": [["prescribed", "government rules", "rules", "set by the government", "specified by the government"]]},
+    {"id": "T8", "question": "What duties do I have as a Data Principal?",
+     "expected_sections": ["Section 15"],
+     "key_facts": [["impersonat", "pretend"], ["false", "frivolous"]]},
+    {"id": "T9", "question": "Can my personal data be sent to other countries?",
+     "expected_sections": ["Section 16(1)", "Section 16(2)"],
+     "key_facts": [["central government", "government"], ["restrict", "block", "limit", "notif"]]},
+    {"id": "T10", "question": "How long do I have to appeal against an order of the Data Protection Board, and to whom?",
+     "expected_sections": ["Section 29(1)", "Section 29(2)"],
+     "key_facts": [["appellate tribunal", "tribunal", "tdsat"], ["sixty days", "60 days"]]}
+  ],
+  "out_of_scope": [
+    {"id": "O1", "question": "What is the penalty under the IT Act for hacking into a computer?"},
+    {"id": "O2", "question": "What is the GST rate on restaurant food?"},
+    {"id": "O3", "question": "How do I file my income tax return online?"}
+  ]
+}

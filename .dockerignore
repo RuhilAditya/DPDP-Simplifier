@@ -1,0 +1,11 @@
+.git
+.venv
+**/__pycache__
+data/processed
+eval
+tests
+evidence
+postman
+.impeccable
+.claude
+*.md

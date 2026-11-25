@@ -1,0 +1,230 @@
+{
+  "summary": {
+    "run_at": "2026-11-25T20:49:40",
+    "base_url": "http://localhost:8000",
+    "requests": 9,
+    "assertions_passed": 30,
+    "assertions_total": 30
+  },
+  "results": [
+    {
+      "request": "Health",
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "time_ms": 4681,
+      "tests_passed": 4,
+      "tests_total": 4,
+      "tests": [
+        {
+          "test": "200 OK",
+          "passed": true
+        },
+        {
+          "test": "status ok",
+          "passed": true
+        },
+        {
+          "test": "phi3:mini available in Ollama",
+          "passed": true
+        },
+        {
+          "test": "index loaded",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "request": "Sections (table of contents)",
+      "method": "GET",
+      "path": "/sections",
+      "status": 200,
+      "time_ms": 2043,
+      "tests_passed": 3,
+      "tests_total": 3,
+      "tests": [
+        {
+          "test": "200 OK",
+          "passed": true
+        },
+        {
+          "test": "44 sections + Schedule",
+          "passed": true
+        },
+        {
+          "test": "Section 8 title",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "request": "Ask - consent withdrawal (in scope)",
+      "method": "POST",
+      "path": "/ask",
+      "status": 200,
+      "time_ms": 14758,
+      "tests_passed": 6,
+      "tests_total": 6,
+      "tests": [
+        {
+          "test": "200 OK",
+          "passed": true
+        },
+        {
+          "test": "not a fallback",
+          "passed": true
+        },
+        {
+          "test": "cites Section 6(4)",
+          "passed": true
+        },
+        {
+          "test": "verbatim clause returned",
+          "passed": true
+        },
+        {
+          "test": "has plain-language rewrite",
+          "passed": true
+        },
+        {
+          "test": "has disclaimer",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "request": "Ask - who is a child (in scope)",
+      "method": "POST",
+      "path": "/ask",
+      "status": 200,
+      "time_ms": 5449,
+      "tests_passed": 3,
+      "tests_total": 3,
+      "tests": [
+        {
+          "test": "200 OK",
+          "passed": true
+        },
+        {
+          "test": "cites Section 2(f)",
+          "passed": true
+        },
+        {
+          "test": "mentions eighteen",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "request": "Ask - maximum penalty (in scope)",
+      "method": "POST",
+      "path": "/ask",
+      "status": 200,
+      "time_ms": 19113,
+      "tests_passed": 3,
+      "tests_total": 3,
+      "tests": [
+        {
+          "test": "200 OK",
+          "passed": true
+        },
+        {
+          "test": "cites Schedule item 1",
+          "passed": true
+        },
+        {
+          "test": "250 crore",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "request": "Ask - IT Act penalty (out of scope -> fallback)",
+      "method": "POST",
+      "path": "/ask",
+      "status": 200,
+      "time_ms": 6102,
+      "tests_passed": 4,
+      "tests_total": 4,
+      "tests": [
+        {
+          "test": "200 OK",
+          "passed": true
+        },
+        {
+          "test": "graceful fallback",
+          "passed": true
+        },
+        {
+          "test": "says not covered",
+          "passed": true
+        },
+        {
+          "test": "no citations invented",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "request": "Ask - validation error (too short)",
+      "method": "POST",
+      "path": "/ask",
+      "status": 422,
+      "time_ms": 2072,
+      "tests_passed": 1,
+      "tests_total": 1,
+      "tests": [
+        {
+          "test": "422 Unprocessable",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "request": "Simplify - Section 8(6)",
+      "method": "POST",
+      "path": "/simplify",
+      "status": 200,
+      "time_ms": 12144,
+      "tests_passed": 4,
+      "tests_total": 4,
+      "tests": [
+        {
+          "test": "200 OK",
+          "passed": true
+        },
+        {
+          "test": "resolved citation",
+          "passed": true
+        },
+        {
+          "test": "verbatim clause",
+          "passed": true
+        },
+        {
+          "test": "rewrite present",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "request": "Simplify - unknown section (404)",
+      "method": "POST",
+      "path": "/simplify",
+      "status": 404,
+      "time_ms": 2055,
+      "tests_passed": 2,
+      "tests_total": 2,
+      "tests": [
+        {
+          "test": "404 Not Found",
+          "passed": true
+        },
+        {
+          "test": "helpful message",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

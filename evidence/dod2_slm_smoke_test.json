@@ -1,0 +1,55 @@
+{
+  "timestamp_utc": "2026-11-22T14:58:11+00:00",
+  "host": "Windows-10-10.0.26220-SP0",
+  "ollama_version": "0.40.17",
+  "model": "phi3:mini",
+  "model_details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "phi3",
+    "families": [
+      "phi3"
+    ],
+    "parameter_size": "3.8B",
+    "quantization_level": "Q4_0"
+  },
+  "model_size_bytes": 2176178913,
+  "loaded_in_ollama": [
+    {
+      "name": "phi3:mini",
+      "size_vram": 3810346925
+    }
+  ],
+  "results": [
+    {
+      "prompt": "What is the capital of India? Answer with one word.",
+      "answer": "New Delhi",
+      "expected_any": [
+        "delhi"
+      ],
+      "passed": true,
+      "latency_s": 8.04
+    },
+    {
+      "prompt": "What is 12 multiplied by 7? Answer with just the number.",
+      "answer": "84",
+      "expected_any": [
+        "84"
+      ],
+      "passed": true,
+      "latency_s": 0.13
+    },
+    {
+      "prompt": "In one sentence, what does 'personal data' mean?",
+      "answer": "Personal data refers to any information that can be used to identify an individual, either directly or indirectly.",
+      "expected_any": [
+        "person",
+        "individual",
+        "identif"
+      ],
+      "passed": true,
+      "latency_s": 0.52
+    }
+  ],
+  "all_passed": true
+}

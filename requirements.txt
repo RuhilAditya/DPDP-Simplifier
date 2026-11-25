@@ -1,0 +1,19 @@
+# CPU torch keeps the install and Docker image small; embeddings run fine on CPU.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1
+sentence-transformers>=3.0,<4
+faiss-cpu>=1.8
+pdfplumber>=0.11
+pypdf>=4.2
+langchain>=0.3,<0.4
+langchain-core>=0.3,<0.4
+langchain-community>=0.3,<0.4
+langchain-huggingface>=0.1
+langchain-ollama>=0.2
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+requests>=2.32
+pytest>=8
+httpx>=0.27
+rank_bm25>=0.2.2

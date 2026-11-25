@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/processed/faiss_index/
+.hf/
+.impeccable/review/
+.impeccable/config.local.json
+.env

@@ -1,0 +1,8 @@
+[PASS]   8.0s  What is the capital of India? Answer with one word.
+        -> New Delhi
+[PASS]   0.1s  What is 12 multiplied by 7? Answer with just the number.
+        -> 84
+[PASS]   0.5s  In one sentence, what does 'personal data' mean?
+        -> Personal data refers to any information that can be used to identify an individual, either directly or indirectly.
+
+Model: phi3:mini (3.8B, Q4_0), Ollama 0.40.17. All passed: True. Evidence: evidence\dod2_slm_smoke_test.json

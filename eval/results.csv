@@ -1,0 +1,14 @@
+id,type,question,expected,cited,retrieval_hit,citation_hit,facts,fallback,latency_s,auto_pass,meaning_preserved,correct,notes
+T1,in-scope,Who counts as a child under this law?,Section 2(f),Section 2(f),True,True,1/1,False,15.66,True,True,True,Matches 2(f): not completed eighteen years.
+T2,in-scope,What does an organisation have to do if it suffers a personal data breach?,Section 8(6),Section 8(6),True,True,2/2,False,4.14,True,False,False,"Rewrite adds 'promptly'; 8(6) sets no timing, only 'form and manner as may be prescribed'."
+T3,in-scope,"Can I take back my consent later, and how easy does that have to be?",Section 6(4),Section 6(4),True,True,2/2,False,3.62,True,True,True,Any time; ease comparable to giving consent.
+T4,in-scope,What is the maximum fine for not taking reasonable security safeguards to prevent a data breach?,"Schedule, item 1","Schedule, item 1",True,True,1/1,False,4.31,True,True,True,"Up to Rs 250 crore, Schedule item 1."
+T5,in-scope,What information must be given in the notice before my consent is asked for?,Section 5(1),Section 6(10),True,False,3/3,False,5.48,False,True,False,Content matches 5(1) but attributed to 6(10) (citation error).
+T6,in-scope,Is targeted advertising aimed at children allowed?,Section 9(3),Section 9(3),True,True,2/2,False,3.15,True,True,True,9(3) prohibition kept.
+T7,in-scope,How quickly must a company reply to my grievance?,Section 13(2),Section 13(2),True,True,1/1,False,4.08,True,True,True,Period to be prescribed by rules.
+T8,in-scope,What duties do I have as a Data Principal?,Section 15,"Section 15, Section 13(1)",True,True,0/2,False,4.21,False,False,False,"Lists grievance redressal (a right, s.13) as a duty; omits impersonation and false-grievance duties."
+T9,in-scope,Can my personal data be sent to other countries?,Section 16(1) / Section 16(2),-,False,False,0/2,True,3.98,False,False,False,Retrieval missed s.16; model fell back.
+T10,in-scope,"How long do I have to appeal against an order of the Data Protection Board, and to whom?",Section 29(1) / Section 29(2),"Section 29(6), Section 29(2)",True,True,2/2,False,4.08,True,True,True,"60 days, Appellate Tribunal (29(2)); extra cite 29(6)."
+O1,out-of-scope,What is the penalty under the IT Act for hacking into a computer?,fallback,-,,,,True,2.73,True,,True,model reported the retrieved clauses do not answer the question
+O2,out-of-scope,What is the GST rate on restaurant food?,fallback,-,,,,True,0.02,True,,True,best retrieval score 0.20 < threshold 0.25
+O3,out-of-scope,How do I file my income tax return online?,fallback,-,,,,True,0.02,True,,True,best retrieval score 0.23 < threshold 0.25

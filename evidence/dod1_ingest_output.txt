@@ -1,0 +1,79 @@
+Parsed 44 sections, 7 schedule rows -> 202 chunks
+Chunk length (chars): min 53, median 258, max 1434
+
+Sections found:
+   1. Short title and commencement                                 p.1
+   2. Definitions                                                  p.2
+   3. Application of Act                                           p.3
+   4. Grounds for processing personal data                         p.4
+   5. Notice                                                       p.4
+   6. Consent                                                      p.5
+   7. Certain legitimate uses                                      p.6
+   8. General obligations of Data Fiduciary                        p.7
+   9. Processing of personal data of children                      p.8
+  10. Additional obligations of Significant Data Fiduciary         p.8
+  11. Right to access information about personal data              p.9
+  12. Right to correction and erasure of personal data             p.10
+  13. Right of grievance redressal                                 p.10
+  14. Right to nominate                                            p.10
+  15. Duties of Data Principal                                     p.10
+  16. Processing of personal data outside India                    p.11
+  17. Exemptions                                                   p.11
+  18. Establishment of Board                                       p.12
+  19. Composition and qualifications for appointment of Chairperso p.12
+  20. Salary, allowances payable to and term of office             p.12
+  21. Disqualifications for appointment and continuation as Chairp p.13
+  22. Resignation by Members and filling of vacancy                p.13
+  23. Proceedings of Board                                         p.13
+  24. Officers and employees of Board                              p.13
+  25. Members and officers to be public servants                   p.13
+  26. Powers of Chairperson                                        p.14
+  27. Powers and functions of Board                                p.14
+  28. Procedure to be followed by Board                            p.14
+  29. Appeal to Appellate Tribunal                                 p.15
+  30. Orders passed by Appellate Tribunal to be executable as decr p.16
+  31. Alternate dispute resolution                                 p.16
+  32. Voluntary undertaking                                        p.16
+  33. Penalties                                                    p.16
+  34. Crediting sums realised by way of penalties to Consolidated  p.17
+  35. Protection of action taken in good faith                     p.17
+  36. Power to call for information                                p.17
+  37. Power of Central Government to issue directions              p.17
+  38. Consistency with other laws                                  p.18
+  39. Bar of jurisdiction                                          p.18
+  40. Power to make rules                                          p.18
+  41. Laying of rules and certain notifications                    p.19
+  42. Power to amend Schedule                                      p.19
+  43. Power to remove difficulties                                 p.19
+  44. Amendments to certain Acts                                   p.19
+
+Sample chunks:
+--- [Section 2(f)] Definitions | CHAPTER I - PRELIMINARY | pages [2, 3]
+(f) "child" means an individual who has not completed the age of eighteen
+years;
+--- [Section 6(1)] Consent | CHAPTER II - OBLIGATIONS OF DATA FIDUCIARY | pages [5, 6]
+(1) The consent given by the Data Principal shall be free, specific, informed,
+unconditional and unambiguous with a clear affirmative action, and shall signify an
+agreement to the processing of her personal data for the specified purpose and be limited to
+such personal data as is necessary for such specified purpose.
+Illustration.
+X, an individual, downloads Y, a telemedicine app. Y requests the consent of X for (i)
+the processing of her personal data for making available telemedicine services, and (ii)
+accessing her mobile phone contact list, and X signifies her consent to both. Since phone
+c...
+--- [Section 8(6)] General obligations of Data Fiduciary | CHAPTER II - OBLIGATIONS OF DATA FIDUCIARY | pages [7, 8]
+(6) In the event of a personal data breach, the Data Fiduciary shall give the Board and
+each affected Data Principal, intimation of such breach in such form and manner as may be
+prescribed.
+--- [Section 17(1)(c)] Exemptions | CHAPTER IV - SPECIAL PROVISIONS | pages [11, 12]
+(1) The provisions of Chapter II, except sub-sections (1) and (5) of section 8, and
+those of Chapter III and section 16 shall not apply where—
+...
+(c) personal data is processed in the interest of prevention, detection,
+investigation or prosecution of any offence or contravention of any law for the time
+being in force in India;
+--- [Schedule, item 1] Penalties (Schedule, see section 33(1)) | THE SCHEDULE | pages [21]
+1. Breach: Breach in observing the obligation of Data Fiduciary to take reasonable security safeguards to prevent personal data breach under sub-section (5) of section 8.
+Penalty: May extend to two hundred and fifty crore rupees.
+
+FAISS index with 202 vectors saved to data\processed\faiss_index

@@ -1,0 +1,21 @@
+{
+  "_note": "DEV set: the only questions used to pick SIM_THRESHOLD and adjust prompts. No overlap with eval/questions.json.",
+  "in_scope": [
+    {"question": "What is a Consent Manager?", "expected_sections": ["Section 2(g)"]},
+    {"question": "Can I ask for my personal data to be corrected or deleted?", "expected_sections": ["Section 12(1)", "Section 12(2)", "Section 12(3)"]},
+    {"question": "What extra obligations does a Significant Data Fiduciary have?", "expected_sections": ["Section 10(2)"]},
+    {"question": "Does the Act apply to a foreign company selling to people in India?", "expected_sections": ["Section 3"]},
+    {"question": "Who sits on the Data Protection Board?", "expected_sections": ["Section 19(1)", "Section 19(2)"]},
+    {"question": "Can someone else use my rights if I die?", "expected_sections": ["Section 14(1)"]},
+    {"question": "When can my data be processed without my consent?", "expected_sections": ["Section 7(a)", "Section 7(b)", "Section 7(c)", "Section 7(d)", "Section 7(e)", "Section 7(f)", "Section 7(g)", "Section 7(h)", "Section 7(i)", "Section 4(1)"]},
+    {"question": "How much can the Board fine for breaking a voluntary undertaking?", "expected_sections": ["Schedule, item 6"]}
+  ],
+  "out_of_scope": [
+    "How do I renew my driving licence?",
+    "What are the GDPR fines in the European Union?",
+    "What is the punishment for theft under the Indian Penal Code?",
+    "How do I apply for a passport?",
+    "Which cricket team won the 2011 World Cup?",
+    "What is the minimum wage in Maharashtra?"
+  ]
+}
